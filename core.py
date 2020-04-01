@@ -395,7 +395,7 @@ class TradingRobot:
 # Later create entire module of models
 class SimpleMovingAverage:
     
-    def __init__(self, y, data, window=[25, 250]):
+    def __init__(self, y, data, window=[10, 100]):
         
         self.y = y # Ensure that y is a pandas dataframe
         self.data = data.copy()
@@ -415,7 +415,7 @@ class SimpleMovingAverage:
 
 class ExponentialMovingAverage:
     
-    def __init__(self, y, data, window=(25,250)):
+    def __init__(self, y, data, window=(10,100)):
         
         self.y = y
         self.data = data.copy()
