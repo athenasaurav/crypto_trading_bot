@@ -76,7 +76,7 @@ class TradingRobot:
                          'first_trade_id','last_trade_id', 'open',
                          'high','low','close',
                          'base_volume','quote_volume','number_of_trades',
-                         'EMA_148','EMA_700','closed',
+                         'EMA_10','EMA_100','closed',
                          'taker_buy_base_volume','taker_buy_quote_volume','source',
                          'trade_action','price_at_trade','fill_quantity',
                          'fill_commission','fill_commission_asset']
@@ -172,7 +172,7 @@ class TradingRobot:
             
             # Create the model
             # SMA = SimpleMovingAverage(y='close', data=model_input)
-            model = ExponentialMovingAverage(y='close', data=model_input, window=(148, 700))
+            model = ExponentialMovingAverage(y='close', data=model_input, window=(10, 100))
             
             # Fit the model
             self.model_output = model.fit()
